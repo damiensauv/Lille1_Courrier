@@ -5,7 +5,7 @@ import model.City;
  */
 public class Main {
 
-    public  static void main() {
+    public  static void main(String[] args) {
 
         int nbDays = 6;
         int inhabitant = 100;
