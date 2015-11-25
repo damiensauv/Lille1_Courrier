@@ -7,8 +7,12 @@ public class PromissoryNote extends NotUrgentLetter
 		super(sender, receiver);
 		double tmp = content * 0.01;
 		this.cost = 1 + (int)tmp;
-
+		this.content = content;
 	}
 
+	@Override
+	public Integer getContent(){
+		return (Integer) this.content;
+	}
 }
 
