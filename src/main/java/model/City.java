@@ -20,7 +20,7 @@ public class City
 	public void generateInhabitant(int inhabitant) {
 		int i = 0;
 		while (i < inhabitant){
-			this.inhabitants.add(new Inhabitant(i + 1));
+			this.inhabitants.add(new Inhabitant(i + 1, this));
 			i++;
 		}
 	}
