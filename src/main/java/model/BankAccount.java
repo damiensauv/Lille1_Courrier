@@ -9,6 +9,11 @@ public class BankAccount
 		this.amount = initAmount;
 	}
 
+	public int getAmount()
+	{
+		return this.amount;
+	}
+
 	public void credit(int amount) {
 		this.amount += amount;
 	}

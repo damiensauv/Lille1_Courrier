@@ -40,6 +40,11 @@ public abstract class Letter<T>
 		this.cost = cost;
 	}
 
+	public Letter getType()
+	{
+		return this;
+	}
+
 	public T getContent() {
 		return content;
 	}
