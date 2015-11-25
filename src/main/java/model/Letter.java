@@ -18,6 +18,8 @@ public abstract class Letter<T>
 
 	public abstract void doAction();
 
+	public abstract void displaySend();
+
 	public Inhabitant getSender() {
 		return sender;
 	}

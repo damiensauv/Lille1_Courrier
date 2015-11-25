@@ -12,5 +12,7 @@ public abstract class NotUrgentLetter extends Letter
 
 	}
 
+	public abstract void displaySend();
+
 }
 

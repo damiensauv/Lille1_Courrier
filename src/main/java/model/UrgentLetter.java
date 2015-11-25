@@ -12,6 +12,10 @@ public class UrgentLetter extends Letter
 
 	}
 
+	@Override
+	public void displaySend(){
+	}
+
 	public NotUrgentLetter getContent(){
 		return (NotUrgentLetter) this.content;
 	}

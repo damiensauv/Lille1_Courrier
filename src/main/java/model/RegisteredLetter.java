@@ -19,6 +19,10 @@ public class RegisteredLetter extends NotUrgentLetter
 	}
 
 	@Override
+	public void displaySend(){
+	}
+
+	@Override
 	public NotUrgentLetter getContent(){
 		return (NotUrgentLetter) this.content;
 	}

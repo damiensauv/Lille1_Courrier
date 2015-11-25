@@ -12,5 +12,10 @@ public class AcknowledgeOfReceipt extends NotUrgentLetter
 	{
 		
 	}
+
+	@Override
+	public void displaySend() {
+
+	}
 }
 
