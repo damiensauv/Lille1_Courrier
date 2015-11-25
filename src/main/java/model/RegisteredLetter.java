@@ -10,6 +10,11 @@ public class RegisteredLetter extends NotUrgentLetter
 	}
 
 	@Override
+	public void doAction() {
+
+	}
+
+	@Override
 	public NotUrgentLetter getContent(){
 		return (NotUrgentLetter) this.content;
 	}

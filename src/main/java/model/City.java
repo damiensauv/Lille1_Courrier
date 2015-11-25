@@ -49,7 +49,7 @@ public class City
 
 	public void distributeLetters()
 	{
-		for (ArrayList<Letter> postBox :l)
+		for (Letter l : postBox)
 		{
 			l.doAction();
 		}

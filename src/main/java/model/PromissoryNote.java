@@ -11,6 +11,11 @@ public class PromissoryNote extends NotUrgentLetter
 	}
 
 	@Override
+	public void doAction() {
+		
+	}
+
+	@Override
 	public Integer getContent(){
 		return (Integer) this.content;
 	}
