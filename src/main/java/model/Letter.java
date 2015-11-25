@@ -16,6 +16,8 @@ public abstract class Letter<T>
 	protected Letter() {
 	}
 
+	public abstract void doAction();
+
 	public Inhabitant getSender() {
 		return sender;
 	}

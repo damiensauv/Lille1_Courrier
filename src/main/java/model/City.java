@@ -31,6 +31,7 @@ public class City
 		if (letter.getSender().getBankAccount().getAmount() >= letter.getCost())
 		{			
 			postBox.add(letter);
+			letter.getSender().getBankAccount().debit(letter.getCost());
 			System.out.println("-> " + letter.getSender().getName() + " mails a simple letter whose content is a text content "
 				+ letter.getContent() + " to " + letter.getReceiver().getName() + "for a cost of " + letter.getCost() + " euros");
 			System.out.println("-" + letter.getCost() + " euros are debited from " + letter.getSender().getName() + " account whose balance is now "
@@ -46,7 +47,12 @@ public class City
 	// trace
 	}
 
-	public void distributeLetters() {
+	public void distributeLetters()
+	{
+		for (ArrayList<Letter> postBox :l)
+		{
+			l.doAction();
+		}
 
 		// trace
 

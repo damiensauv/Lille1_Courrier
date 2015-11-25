@@ -13,4 +13,9 @@ public class SimpleLetter extends NotUrgentLetter
 	public String getContent(){
 		return (String)this.content;
 	}
+
+	public void doAction()
+	{
+		
+	}
 }

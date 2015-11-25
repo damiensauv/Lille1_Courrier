@@ -18,5 +18,9 @@ public class AcknowledgeOfReceipt extends NotUrgentLetter
 		super(sender, receiver);
 	}
 
+	public void doAction()
+	{
+		
+	}
 }
 
