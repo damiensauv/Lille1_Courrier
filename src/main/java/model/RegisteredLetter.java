@@ -23,8 +23,8 @@ public class RegisteredLetter extends NotUrgentLetter
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public RegisteredLetter(){
-		super();
+	public RegisteredLetter(Inhabitant sender, Inhabitant receiver, String content){
+		super(sender, receiver);
 	}
 
 }

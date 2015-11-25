@@ -26,9 +26,26 @@ public class City
 
 	public void sendLetter() {
 
+		Letter letter = new SimpleLetter(inhabitants.get(0), inhabitants.get(1), "bla bla");
+
+		postBox.add(letter);
+
+		System.out.println(letter.getSender().getName() + " mails a simple letter whose content is a text content "
+				+ letter.getContent() + " to " + letter.getReceiver().getName() + "for a cost of " + letter.getCost() + " euros");
+
+
+		// methode just display
+		// random nb letters a cree
+		// random type letter
+		// random sur exp, dest
+
+	// trace
 	}
 
 	public void distributeLetters() {
+
+		// trace
+
 	}
 
 	public String getName() {

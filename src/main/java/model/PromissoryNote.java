@@ -1,21 +1,13 @@
 package model;
 
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
 public class PromissoryNote extends NotUrgentLetter
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public PromissoryNote(){
-		super();
+	public PromissoryNote(Inhabitant sender, Inhabitant receiver, double content){
+		super(sender, receiver);
+		double tmp = content * 0.01;
+		this.cost = 1 + (int)tmp;
+
 	}
 
 }

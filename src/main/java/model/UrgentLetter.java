@@ -24,7 +24,7 @@ public class UrgentLetter extends Letter
 	 * @generated
 	 */
 	public UrgentLetter(){
-		super();
+		//super();
 	}
 
 }

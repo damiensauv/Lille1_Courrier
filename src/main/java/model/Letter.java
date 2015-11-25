@@ -5,16 +5,47 @@ public abstract class Letter<T>
 	public Inhabitant sender;
 	public Inhabitant receiver;
 	public int cost;
-	public City city;
 	public T content;
 
-	public Letter(){
+	public Letter(Inhabitant sender, Inhabitant receiver){
 		super();
+		this.sender = sender;
+		this.receiver = receiver;
 	}
 
-	public void letter(Inhabitant sender, Inhabitant receiver, int cost) {
-		// TODO implement me	
+	protected Letter() {
 	}
 
+	public Inhabitant getSender() {
+		return sender;
+	}
+
+	public void setSender(Inhabitant sender) {
+		this.sender = sender;
+	}
+
+	public Inhabitant getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(Inhabitant receiver) {
+		this.receiver = receiver;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public T getContent() {
+		return content;
+	}
+
+	public void setContent(T content) {
+		this.content = content;
+	}
 }
 

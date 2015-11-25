@@ -20,50 +20,10 @@ public class Main {
         System.out.println("Creating " + inhabitant + " inhabitants");
         System.out.println("Mailing letters for " + nbDays + " days");
 
-
+        city.sendLetter();
         // loop nb days
             //action Receives
             // action Send
 
-
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
