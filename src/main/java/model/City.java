@@ -16,7 +16,7 @@ public class City
 		this.name = name;
 	}
 
-	public ArrayList<Letter> getPostBox()
+	public List<Letter> getPostBox()
 	{
 		return postBox;
 	}
@@ -29,8 +29,54 @@ public class City
 		}
 	}
 
+	public int randomOfLettersInhabitants(int max){
+		return (int)(0 + (Math.random() * (max - 0)));
+	}
+
+	public void cityCreateLetter(int nbLetters){
+
+		int idSend, idReceiv;
+		int i = 0;
+		int typeLetters;
+
+		while (i < nbLetters) {
+			idSend = this.randomOfLettersInhabitants(99);
+			while ((idReceiv = this.randomOfLettersInhabitants(99)) != idSend);
+
+			typeLetters = this.randomOfLettersInhabitants(4);
+			if (typeLetters == 0)
+				this.createSimpleLetters(inhabitants.get(idSend), inhabitants.get(idReceiv));
+			else if (typeLetters == 1)
+				this.createPromiseLetters(inhabitants.get(idSend), inhabitants.get(idReceiv));
+			else if (typeLetters == 2)
+				this.createRegistredLetters(inhabitants.get(idSend), inhabitants.get(idReceiv));
+			else if (typeLetters == 3)
+				this.createUrgentLetters(inhabitants.get(idSend), inhabitants.get(idReceiv));
+			i++;
+		}
+	}
+
+	private void createUrgentLetters(Inhabitant inhabitant, Inhabitant inhabitant1) {
+	}
+
+
+	private void createRegistredLetters(Inhabitant inhabitant, Inhabitant inhabitant1) {
+	}
+
+
+	private void createPromiseLetters(Inhabitant inhabitant, Inhabitant inhabitant1) {
+	}
+
+	private void createSimpleLetters(Inhabitant inhabitant, Inhabitant inhabitant1) {
+	}
+
+
 	public void sendLetter() {
 
+		int nbLetters = this.randomOfLettersInhabitants(10);
+
+		this.cityCreateLetter(10);
+		
 		Letter letter = new SimpleLetter(inhabitants.get(0), inhabitants.get(1), "bla bla");
 
 		if (letter.getSender().getBankAccount().getAmount() >= letter.getCost())
@@ -44,6 +90,7 @@ public class City
 		}
 		else
 			System.out.println("-> " + letter.getSender().getName() + "doesn't have enough money to send" + letter.getType());
+
 		// methode just display
 		// random nb letters a cree
 		// random type letter
