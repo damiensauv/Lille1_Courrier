@@ -24,7 +24,36 @@ public class City
 		}
 	}
 
+	public int randomOfLettersInhabitants(int max){
+		return (int)(0 + (Math.random() * (max - 0)));
+	}
+
+	public void cityCreateLetter(int nbLetters){
+
+		int idSend, idReceiv;
+		int i = 0;
+		NotUrgentLetter letter;
+		RegisteredLetter registeredLetter;
+		UrgentLetter urgentLetter;
+
+		while (i < nbLetters) {
+
+			idSend = this.randomOfLettersInhabitants(99);
+			while ((idReceiv = this.randomOfLettersInhabitants(99)) != idSend);
+			
+
+
+
+			i++;
+		}
+
+
+
+	}
+
 	public void sendLetter() {
+
+		int nbLetters = this.randomOfLettersInhabitants(10);
 
 		Letter letter = new SimpleLetter(inhabitants.get(0), inhabitants.get(1), "bla bla");
 
@@ -39,6 +68,7 @@ public class City
 		}
 		else
 			System.out.println("-> " + letter.getSender().getName() + "doesn't have enough money to send" + letter.getType());
+
 		// methode just display
 		// random nb letters a cree
 		// random type letter
