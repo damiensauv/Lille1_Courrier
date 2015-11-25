@@ -44,22 +44,19 @@ public class City
 			idSend = this.randomOfLettersInhabitants(99);
 			idReceiv = this.randomOfLettersInhabitants(99);
 
-
 			nbRadom = this.randomOfLettersInhabitants(10);
 
 //			if ((nbRadom % 2) == 0)
-				letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
+//				letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
 //			else
-//				letter = new PromissoryNote(inhabitants.get(idSend), inhabitants.get(idReceiv), this.randomOfLettersInhabitants(300));
+				letter = new PromissoryNote(inhabitants.get(idSend), inhabitants.get(idReceiv), this.randomOfLettersInhabitants(300));
 
 			this.postBox.add(letter);
 
 			i++;
 		}
-
-
-
 	}
+
 
 	public void sendLetter() {
 
@@ -71,25 +68,6 @@ public class City
 			l.displaySend();
 		}
 
-		/*
-		if (letter.getSender().getBankAccount().getAmount() >= letter.getCost())
-		{			
-			postBox.add(letter);
-			letter.getSender().getBankAccount().debit(letter.getCost());
-			System.out.println("-> " + letter.getSender().getName() + " mails a simple letter whose content is a text content "
-				+ letter.getContent() + " to " + letter.getReceiver().getName() + "for a cost of " + letter.getCost() + " euros");
-			System.out.println("-" + letter.getCost() + " euros are debited from " + letter.getSender().getName() + " account whose balance is now "
-				+ letter.getSender().getBankAccount().getAmount() + " euros");
-		}
-		else
-			System.out.println("-> " + letter.getSender().getName() + "doesn't have enough money to send" + letter.getType());
-*/
-		// methode just display
-		// random nb letters a cree
-		// random type letter
-		// random sur exp, dest
-
-	// trace
 	}
 
 	public void distributeLetters()

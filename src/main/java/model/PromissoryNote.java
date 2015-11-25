@@ -3,9 +3,9 @@ package model;
 
 public class PromissoryNote extends NotUrgentLetter
 {
-	public PromissoryNote(Inhabitant sender, Inhabitant receiver, double content){
+	public PromissoryNote(Inhabitant sender, Inhabitant receiver, int content){
 		super(sender, receiver);
-		double tmp = content * 0.01;
+		double tmp = ((double)content) * 0.01;
 		this.cost = 1 + (int)tmp;
 		this.content = content;
 	}
@@ -26,6 +26,14 @@ public class PromissoryNote extends NotUrgentLetter
 
 	@Override
 	public void displaySend(){
+		System.out.println("-> " + this.getSender().getName() + " mails a promissory note letter whose content is a money ("
+				+ this.getContent() + ") to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
+
+		this.getSender().getBankAccount().debit(this.getCost());
+
+		System.out.println(" - " + this.getCost() + " euros are debited from " + this.getSender().getName() + " account whose balance is now "
+				+ this.getSender().getBankAccount().getAmount() + " euros");
+
 	}
 
 	@Override
