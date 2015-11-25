@@ -16,7 +16,7 @@ public class City
 		this.name = name;
 	}
 
-	public ArrayList<Letter> getPostBox()
+	public List<Letter> getPostBox()
 	{
 		return postBox;
 	}
