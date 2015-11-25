@@ -7,13 +7,12 @@ public class City
 {
 	public String name;
 	protected List<Inhabitant> inhabitants;
-//	protected List<Letter> postBox;
-	// not sure ??
+	protected List<Letter> postBox;
 
 	public City(String name){
 		super();
 		this.inhabitants = new ArrayList<Inhabitant>();
-		// new list of Letter/PostBox
+		this.postBox = new ArrayList<Letter>();
 		this.name = name;
 	}
 
@@ -26,11 +25,10 @@ public class City
 	}
 
 	public void sendLetter() {
-		// TODO implement me	
+
 	}
 
 	public void distributeLetters() {
-		// TODO implement me	
 	}
 
 	public String getName() {
