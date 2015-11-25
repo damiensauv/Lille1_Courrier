@@ -12,8 +12,8 @@ public class RegisteredLetter extends NotUrgentLetter
 	@Override
 	public void doAction()
 	{
-		super.doAction();
-		String receipt = "Aknoledgment of recepipt for a registered letter whose content is a " + super.getType() + " whose content is : " + this.getContent();
+		this.getContent().doAction();
+		String receipt = "Aknoledgment of recepipt for a registered letter whose content is a " + this.getContent().getType() + " whose content is : " + this.getContent();
 		AcknowledgeOfReceipt acknowReceipt = new AcknowledgeOfReceipt(this.getReceiver(), this.getSender(), receipt);
 		this.sender.getCity().getPostBox().add(acknowReceipt);
 	}
