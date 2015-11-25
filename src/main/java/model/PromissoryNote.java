@@ -12,7 +12,7 @@ public class PromissoryNote extends NotUrgentLetter
 
 	@Override
 	public void doAction() {
-		
+
 	}
 
 	@Override
