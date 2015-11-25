@@ -3,19 +3,28 @@ package model;
 public class Inhabitant
 {
 	public String name;
-
-	public City city;
-
 	public BankAccount bankAccount;
 
-	public City city2;
-
-	public Inhabitant(){
+	public Inhabitant(int nb){
 		super();
-		// generate name
-		//generate Bank Account
-
+		this.name = "inhabitant-" + String.valueOf(nb);
+        this.bankAccount = new BankAccount(5000);
 	}
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BankAccount getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
 }
 
