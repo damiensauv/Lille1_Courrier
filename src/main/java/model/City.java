@@ -16,6 +16,11 @@ public class City
 		this.name = name;
 	}
 
+	public ArrayList<Letter> getPostBox()
+	{
+		return postBox;
+	}
+
 	public void generateInhabitant(int inhabitant) {
 		int i = 0;
 		while (i < inhabitant){
