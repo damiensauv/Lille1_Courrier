@@ -16,10 +16,8 @@ public class Main {
 
         // Create inhabitant
         city.generateInhabitant(inhabitant);
-        // send nb inhabitant to city
 
         System.out.println("Creating " + inhabitant + " inhabitants");
-
         System.out.println("Mailing letters for " + nbDays + " days");
 
 
