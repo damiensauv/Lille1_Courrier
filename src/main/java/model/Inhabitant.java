@@ -13,23 +13,48 @@ public class Inhabitant
         this.bankAccount = new BankAccount(5000);
 	}
 
+    /**
+     * @return city
+     */
     public City getCity() {
         return city;
     }
+
+    /**
+     * @param city
+     */
     public void setCity(City city) {
         this.city = city;
     }
 
+    /**
+     *
+     * @return name
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return bankAccount
+     */
     public BankAccount getBankAccount() {
         return bankAccount;
     }
+
+    /**
+     *
+     * @param bankAccount
+     */
     public void setBankAccount(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }

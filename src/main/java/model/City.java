@@ -59,8 +59,6 @@ public class City
 			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
 				letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
-
-
 			try {
 				this.postBox.post(letter);
 			} catch (CannotAffordLetterException e) {

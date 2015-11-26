@@ -28,10 +28,5 @@ public class Main {
             city.sendLetters();
             i++;
         }
-
-
-
-
-
     }
 }

@@ -9,19 +9,29 @@ public class BankAccount
 		this.amount = initAmount;
 	}
 
+	/**
+	 *
+	 * @return amount
+     */
 	public int getAmount()
 	{
 		return this.amount;
 	}
 
+	/**
+	 * Credit the BankAccount
+	 * @param amount
+     */
 	public void credit(int amount) {
 		this.amount += amount;
 	}
 
-
+	/**
+	 * Debit the BankAccount
+	 * @param amount
+     */
 	public void debit(int amount) {
 		this.amount -= amount;
 	}
-	
 }
 
