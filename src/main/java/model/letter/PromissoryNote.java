@@ -14,14 +14,19 @@ public class PromissoryNote extends NotUrgentLetter<Integer> {
 
     @Override
     public void doAction() {
-        Letter<?> thankYouLetter = new ThanksLetter(this.getReceiver(), this.getSender(), String.valueOf(this.getContent()));
-        getReceiver().getBankAccount().credit(getContent());
-        System.out.println(" + " + getReceiver().getName() + " is credited with " + getContent() + " euros; its balance is now " + getReceiver().getBankAccount().getAmount() + " euro");
-        try {
-            this.getSender().getCity().getPostBox().post(thankYouLetter);
-        } catch (CannotAffordLetterException e) {
-            System.out.println(e.getMessage());
+        if (getSender().getBankAccount().getAmount() >= getContent()) {
+            Letter<?> thankYouLetter = new ThanksLetter(this.getReceiver(), this.getSender(), String.valueOf(this.getContent()));
+            getSender().getBankAccount().debit(getContent());
+            getReceiver().getBankAccount().credit(getContent());
+            System.out.println(" + " + getReceiver().getName() + " is credited with " + getContent() + " euros; its balance is now " + getReceiver().getBankAccount().getAmount() + " euro");
+            try {
+                this.getSender().getCity().getPostBox().post(thankYouLetter);
+            } catch (CannotAffordLetterException e) {
+                System.out.println(e.getMessage());
+            }
         }
+        else
+            System.out.println("no enough money");
     }
 
     @Override
