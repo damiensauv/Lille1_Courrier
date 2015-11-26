@@ -91,8 +91,9 @@ public class City
 		{
 			l.doAction();
 		}
-		this.postBox = new ArrayList<Letter<?>>();
+		this.postBox.clear();
 		this.postBox.addAll(this.getPostBox2());
+		this.getPostBox2().clear();
 	}
 
 	public String getName() {
