@@ -9,6 +9,10 @@ public class BankAccount
 		this.amount = initAmount;
 	}
 
+	/**
+	 *
+	 * @return amount
+     */
 	public int getAmount()
 	{
 		return this.amount;
