@@ -16,6 +16,7 @@ public class SimpleLetter extends NotUrgentLetter
 
 	@Override
 	public void displaySend(){
+
 		System.out.println("-> " + this.getSender().getName() + " mails " + this.displayInside()
 				+  " to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
 
