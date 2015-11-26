@@ -20,7 +20,7 @@ public class RegisteredLetter extends NotUrgentLetter
 
 	@Override
 	public void displaySend(){
-		System.out.println("-> " + this.getSender().getName() + " mails a registered letter whose content is "
+		System.out.println("-> " + this.getSender().getName() + this.displayInside()
 				+ this.getContent().displayInside() + " to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
 
 		this.getSender().getBankAccount().debit(this.getCost());
@@ -32,7 +32,7 @@ public class RegisteredLetter extends NotUrgentLetter
 
 	@Override
 	public String displayInside() {
-		return "";
+		return " a registered letter whose content is ";
 	}
 
 	@Override

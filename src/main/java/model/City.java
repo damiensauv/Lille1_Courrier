@@ -53,8 +53,9 @@ public class City
 /*			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
 */
-				letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
+//			letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
 
+			letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
 
 
 
