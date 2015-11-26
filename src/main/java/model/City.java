@@ -30,7 +30,7 @@ public class City
 	}
 
 	public int randomOfLettersInhabitants(int max){
-		return (int)(0 + (Math.random() * (max - 0)));
+		return (int)(1 + (Math.random() * (max - 1)));
 	}
 
 	public void cityCreateLetter(int nbLetters){
@@ -50,22 +50,18 @@ public class City
 			else
 				letter = new PromissoryNote(inhabitants.get(idSend), inhabitants.get(idReceiv), this.randomOfLettersInhabitants(300));
 
-/*			nbRadom = this.randomOfLettersInhabitants(10);
+			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
-*/
-//			letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
+				letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
 
-			letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
-
-
-
+			nbRadom = this.randomOfLettersInhabitants(10);
+			if ((nbRadom % 2) == 0)
+				letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
 
 			this.postBox.add(letter);
-
 			i++;
 		}
 	}
-
 
 	public void sendLetter() {
 
@@ -76,7 +72,6 @@ public class City
 		{
 			l.displaySend();
 		}
-
 	}
 
 	public void distributeLetters()

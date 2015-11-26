@@ -27,7 +27,7 @@ public class UrgentLetter extends Letter
 
 	@Override
 	public String displayInside() {
-		return " a urgent letter whose is a ";
+		return "a urgent letter whose is ";
 	}
 
 	public NotUrgentLetter getContent(){
