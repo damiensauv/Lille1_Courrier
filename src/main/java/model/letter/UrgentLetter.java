@@ -1,4 +1,6 @@
-package model;
+package model.letter;
+
+import model.Inhabitant;
 
 public class UrgentLetter extends Letter<NotUrgentLetter>
 {

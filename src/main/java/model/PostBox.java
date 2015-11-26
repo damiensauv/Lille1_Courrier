@@ -1,5 +1,7 @@
 package model;
 
+import model.letter.Letter;
+
 import java.util.*;
 
 /**

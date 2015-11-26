@@ -1,8 +1,8 @@
 package model;
 
+import model.letter.Letter;
+import model.letter.SimpleLetter;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by svirchevsky on 26/11/15.

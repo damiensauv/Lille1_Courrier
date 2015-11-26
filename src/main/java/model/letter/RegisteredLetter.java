@@ -1,5 +1,8 @@
-package model;
+package model.letter;
 
+
+import model.CannotAffordLetterException;
+import model.Inhabitant;
 
 public class RegisteredLetter extends NotUrgentLetter<NotUrgentLetter>
 {

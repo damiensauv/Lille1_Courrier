@@ -1,4 +1,6 @@
-package model;
+package model.letter;
+
+import model.Inhabitant;
 
 /**
  * Created by damien on 26/11/15.

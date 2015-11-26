@@ -1,5 +1,7 @@
-package model;
+package model.letter;
 
+
+import model.Inhabitant;
 
 public class SimpleLetter extends NotUrgentLetter<String>
 {
