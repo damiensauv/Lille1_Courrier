@@ -15,7 +15,11 @@ public class RegisteredLetter extends NotUrgentLetter<NotUrgentLetter>
 		this.getContent().doAction();
 		String receipt = "Aknoledgment of recepipt for a registered letter whose content is a " + this.getContent().getType() + " whose content is : " + this.getContent();
 		AcknowledgeOfReceipt acknowReceipt = new AcknowledgeOfReceipt(this.getReceiver(), this.getSender(), receipt);
-		this.sender.getCity().getPostBox2().add(acknowReceipt);
+		try {
+			this.sender.getCity().getPostBox().post(acknowReceipt);
+		} catch (CannotAffordLetterException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	@Override

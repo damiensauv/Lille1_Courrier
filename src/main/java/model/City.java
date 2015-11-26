@@ -7,26 +7,19 @@ public class City
 {
 	public String name;
 	protected List<Inhabitant> inhabitants;
-	protected List<Letter<?>> postBox;
-	protected List<Letter<?>> postBox2;
+	protected PostBox postBox;
 
 	public City(String name){
 		super();
 		this.inhabitants = new ArrayList<Inhabitant>();
-		this.postBox = new ArrayList<Letter<?>>();
-		this.postBox2 = new ArrayList<Letter<?>>();
+		this.postBox = new PostBox();
 
 		this.name = name;
 	}
 
-	public List<Letter<?>> getPostBox()
+	public PostBox getPostBox()
 	{
 		return postBox;
-	}
-
-	public List<Letter<?>> getPostBox2()
-	{
-		return postBox2;
 	}
 
 	public void generateInhabitant(int inhabitant) {
@@ -66,8 +59,11 @@ public class City
 			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
 				letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
-
-			this.postBox.add(letter);
+			try {
+				this.postBox.post(letter);
+			} catch (CannotAffordLetterException e) {
+				System.out.println(e.getMessage());
+			}
 			i++;
 		}
 	}
@@ -85,13 +81,11 @@ public class City
 
 	public void distributeLetters()
 	{
+		postBox.newDay();
 		for (Letter l : postBox)
 		{
 			l.doAction();
 		}
-		this.postBox.clear();
-		this.postBox.addAll(this.getPostBox2());
-		this.getPostBox2().clear();
 	}
 
 	public String getName() {
