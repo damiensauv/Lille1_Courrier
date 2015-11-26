@@ -20,10 +20,18 @@ public class Main {
         System.out.println("Creating " + inhabitant + " inhabitants");
         System.out.println("Mailing letters for " + nbDays + " days");
 
+        System.out.println("***********************************************");
+        System.out.println("Day 1");
+        city.distributeLetters();
         city.sendLetter();
-        // loop nb days
-            //action Receives
-            // action Send
+
+        System.out.println("***********************************************");
+        System.out.println("Day 2");
+        city.distributeLetters();
+        city.sendLetter();
+
+
+
 
     }
 }

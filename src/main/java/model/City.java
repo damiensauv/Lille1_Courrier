@@ -1,24 +1,33 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class City
 {
 	public String name;
 	protected List<Inhabitant> inhabitants;
-	protected List<Letter> postBox;
+	protected List<Letter<?>> postBox;
+	protected List<Letter<?>> postBox2;
 
 	public City(String name){
 		super();
 		this.inhabitants = new ArrayList<Inhabitant>();
-		this.postBox = new ArrayList<Letter>();
+		this.postBox = new ArrayList<Letter<?>>();
+		this.postBox2 = new ArrayList<Letter<?>>();
+
 		this.name = name;
 	}
 
-	public List<Letter> getPostBox()
+	public List<Letter<?>> getPostBox()
 	{
 		return postBox;
+	}
+
+	public List<Letter<?>> getPostBox2()
+	{
+		return postBox2;
 	}
 
 	public void generateInhabitant(int inhabitant) {
@@ -44,12 +53,17 @@ public class City
 			idSend = this.randomOfLettersInhabitants(99);
 			idReceiv = this.randomOfLettersInhabitants(99);
 
-			nbRadom = this.randomOfLettersInhabitants(10);
+/*			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
-				letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
-			else
+*/
+				//letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
+
+//			else
+
 				letter = new PromissoryNote(inhabitants.get(idSend), inhabitants.get(idReceiv), this.randomOfLettersInhabitants(300));
 
+
+			/*
 			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
 				letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
@@ -57,7 +71,7 @@ public class City
 			nbRadom = this.randomOfLettersInhabitants(10);
 			if ((nbRadom % 2) == 0)
 				letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
-
+*/
 			this.postBox.add(letter);
 			i++;
 		}
@@ -67,7 +81,7 @@ public class City
 
 		int nbLetters = this.randomOfLettersInhabitants(10);
 		this.cityCreateLetter(nbLetters);
-		
+
 		for (Letter l : postBox)
 		{
 			l.displaySend();
@@ -80,9 +94,8 @@ public class City
 		{
 			l.doAction();
 		}
-
-		// trace
-
+		this.postBox = new ArrayList<Letter<?>>();
+		this.postBox.addAll(this.getPostBox2());
 	}
 
 	public String getName() {

@@ -17,7 +17,7 @@ public class SimpleLetter extends NotUrgentLetter
 	@Override
 	public void displaySend(){
 		System.out.println("-> " + this.getSender().getName() + " mails " + this.displayInside()
-				+ this.getContent() + " to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
+				+  " to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
 
 		this.getSender().getBankAccount().debit(this.getCost());
 
@@ -31,8 +31,10 @@ public class SimpleLetter extends NotUrgentLetter
 		return (String)this.content;
 	}
 
+	@Override
 	public void doAction()
 	{
-		
+		System.out.println("<- " + this.getReceiver().getName() + " receives " + this.displayInside() + " from "+ this.getSender().getName());
+
 	}
 }

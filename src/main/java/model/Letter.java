@@ -5,6 +5,7 @@ public abstract class Letter<T>
 	public Inhabitant sender;
 	public Inhabitant receiver;
 	public int cost;
+	boolean isReceive;
 	public T content;
 
 	public Letter(Inhabitant sender, Inhabitant receiver){
