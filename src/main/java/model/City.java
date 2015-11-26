@@ -45,11 +45,19 @@ public class City
 			idReceiv = this.randomOfLettersInhabitants(99);
 
 			nbRadom = this.randomOfLettersInhabitants(10);
-
-//			if ((nbRadom % 2) == 0)
-//				letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
-//			else
+			if ((nbRadom % 2) == 0)
+				letter = new SimpleLetter(inhabitants.get(idSend), inhabitants.get(idReceiv), "BlaBla");
+			else
 				letter = new PromissoryNote(inhabitants.get(idSend), inhabitants.get(idReceiv), this.randomOfLettersInhabitants(300));
+
+/*			nbRadom = this.randomOfLettersInhabitants(10);
+			if ((nbRadom % 2) == 0)
+*/
+				letter = new RegisteredLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter)letter);
+
+
+
+
 
 			this.postBox.add(letter);
 

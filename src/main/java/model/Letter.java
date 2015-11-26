@@ -20,6 +20,8 @@ public abstract class Letter<T>
 
 	public abstract void displaySend();
 
+	public abstract String displayInside();
+
 	public Inhabitant getSender() {
 		return sender;
 	}
