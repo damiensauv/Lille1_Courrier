@@ -25,7 +25,7 @@ public class Main {
             System.out.println("***********************************************");
             System.out.println("Day " + String.valueOf(i + 1));
             city.distributeLetters();
-            city.sendLetter();
+            city.sendLetters();
             i++;
         }
 

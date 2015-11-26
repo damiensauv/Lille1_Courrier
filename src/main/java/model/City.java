@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class City
@@ -74,7 +73,7 @@ public class City
 		}
 	}
 
-	public void sendLetter() {
+	public void sendLetters() {
 
 		int nbLetters = this.randomOfLettersInhabitants(10);
 		this.cityCreateLetter(nbLetters);
