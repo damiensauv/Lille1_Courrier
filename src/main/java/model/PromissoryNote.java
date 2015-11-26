@@ -20,7 +20,11 @@ public class PromissoryNote extends NotUrgentLetter<Integer>
 
 				Letter<?> thankYouLetter = new SimpleLetter(this.getReceiver(), this.getSender(), thanksText);
 
-				this.getSender().getCity().getPostBox2().add(thankYouLetter);
+				try {
+					this.getSender().getCity().getPostBox().post(thankYouLetter);
+				} catch (CannotAffordLetterException e) {
+					System.out.println(e.getMessage());
+				}
 			}
 		else
 			System.out.println(this.getReceiver().getName() + " cannot send a thankyou letter. This amount of money on his BankAccount is not sufficient");
