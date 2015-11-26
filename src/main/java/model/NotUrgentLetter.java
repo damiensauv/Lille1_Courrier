@@ -1,6 +1,6 @@
 package model;
 
-public abstract class NotUrgentLetter extends Letter
+public abstract class NotUrgentLetter<T> extends Letter<T>
 {
 	public RegisteredLetter urgentLetter;
 

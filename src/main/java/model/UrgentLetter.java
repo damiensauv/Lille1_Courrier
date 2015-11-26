@@ -1,6 +1,6 @@
 package model;
 
-public class UrgentLetter extends Letter
+public class UrgentLetter extends Letter<NotUrgentLetter>
 {
 	public UrgentLetter(Inhabitant sender, Inhabitant receiver, NotUrgentLetter content){
 		super(sender, receiver);
@@ -29,10 +29,5 @@ public class UrgentLetter extends Letter
 	public String displayInside() {
 		return "a urgent letter whose is ";
 	}
-
-	public NotUrgentLetter getContent(){
-		return (NotUrgentLetter) this.content;
-	}
-
 }
 

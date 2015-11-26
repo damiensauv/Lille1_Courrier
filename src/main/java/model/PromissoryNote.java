@@ -1,7 +1,7 @@
 package model;
 
 
-public class PromissoryNote extends NotUrgentLetter
+public class PromissoryNote extends NotUrgentLetter<Integer>
 {
 	public PromissoryNote(Inhabitant sender, Inhabitant receiver, int content){
 		super(sender, receiver);
@@ -40,11 +40,6 @@ public class PromissoryNote extends NotUrgentLetter
 	@Override
 	public String displayInside() {
 		return "a promissory note letter whose content is a money (" + this.getContent() + ")";
-	}
-
-	@Override
-	public Integer getContent(){
-		return (Integer) this.content;
 	}
 }
 

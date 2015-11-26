@@ -1,7 +1,7 @@
 package model;
 
 
-public class RegisteredLetter extends NotUrgentLetter
+public class RegisteredLetter extends NotUrgentLetter<NotUrgentLetter>
 {
 	public RegisteredLetter(Inhabitant sender, Inhabitant receiver, NotUrgentLetter content){
 		super(sender, receiver);
@@ -33,11 +33,6 @@ public class RegisteredLetter extends NotUrgentLetter
 	@Override
 	public String displayInside() {
 		return "a registered letter whose content is " + this.getContent().displayInside();
-	}
-
-	@Override
-	public NotUrgentLetter getContent(){
-		return (NotUrgentLetter) this.content;
 	}
 
 }

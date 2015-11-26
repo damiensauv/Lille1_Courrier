@@ -1,7 +1,7 @@
 package model;
 
 
-public class SimpleLetter extends NotUrgentLetter
+public class SimpleLetter extends NotUrgentLetter<String>
 {
 	public SimpleLetter(Inhabitant sender, Inhabitant receiver, String content){
 		super(sender, receiver);
@@ -25,11 +25,6 @@ public class SimpleLetter extends NotUrgentLetter
 		System.out.println(" - " + this.getCost() + " euros are debited from " + this.getSender().getName() + " account whose balance is now "
 				+ this.getSender().getBankAccount().getAmount() + " euros");
 
-	}
-
-	@Override
-	public String getContent(){
-		return (String)this.content;
 	}
 
 	@Override
