@@ -24,7 +24,14 @@ public class PostBox implements Iterable<Letter<?>> {
             throw new CannotAffordLetterException(letter.getSender(), bankAccount.getAmount(), letterCost);
         }
         bankAccount.debit(letterCost);
+        displayPost(letter);
         this.nextDay.add(letter);
+    }
+
+    private void displayPost(Letter letter) {
+        System.out.println("-> " + letter.getSender().getName() + " mails " + letter.contentInside() + " to " + letter.getReceiver().getName() + " for a cost of " + letter.getCost() + " euros");
+        System.out.println(" - " + letter.getCost() + " euros are debited from " + letter.getSender().getName() + " account whose balance is now "
+                + letter.getSender().getBankAccount().getAmount() + " euros");
     }
 
     /**

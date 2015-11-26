@@ -79,7 +79,6 @@ public class City {
             Letter letter = createLetter();
             try {
                 this.postBox.post(letter);
-                letter.displaySend();
             } catch (CannotAffordLetterException e) {
                 System.out.println(e.getMessage());
             }
@@ -93,6 +92,7 @@ public class City {
     public void distributeLetters() {
         List<Letter<?>> postedLetters = new ArrayList<Letter<?>>();
         for (Letter l : postBox) {
+            l.displayMessage();
             l.doAction();
             postedLetters.add(l);
         }

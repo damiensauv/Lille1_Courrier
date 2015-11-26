@@ -24,15 +24,16 @@ public abstract class Letter<T>
 	public abstract void doAction();
 
 	/**
-	 * display when letter send
+	 * Display the message
 	 */
-	public abstract void displaySend();
+	public void displayMessage() {
+		System.out.println("<- " + this.getReceiver().getName() + " receives " + this.contentInside() + " from "+ this.getSender().getName());
+	}
 
 	/**
-	 * Display inside Letters
-	 * @return
+	 * @return the content inside the letter
      */
-	public abstract String displayInside();
+	public abstract String contentInside();
 
 	/**
 	 *

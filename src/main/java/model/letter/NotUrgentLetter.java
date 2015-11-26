@@ -14,7 +14,5 @@ public abstract class NotUrgentLetter<T> extends Letter<T>
 
 	}
 
-	public abstract void displaySend();
-
 }
 
