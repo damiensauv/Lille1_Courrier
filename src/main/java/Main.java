@@ -20,15 +20,15 @@ public class Main {
         System.out.println("Creating " + inhabitant + " inhabitants");
         System.out.println("Mailing letters for " + nbDays + " days");
 
-        System.out.println("***********************************************");
-        System.out.println("Day 1");
-        city.distributeLetters();
-        city.sendLetter();
+        int i = 0;
+        while (i < nbDays) {
+            System.out.println("***********************************************");
+            System.out.println("Day " + String.valueOf(i + 1));
+            city.distributeLetters();
+            city.sendLetter();
+            i++;
+        }
 
-        System.out.println("***********************************************");
-        System.out.println("Day 2");
-        city.distributeLetters();
-        city.sendLetter();
 
 
 
