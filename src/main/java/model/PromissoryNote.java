@@ -15,10 +15,9 @@ public class PromissoryNote extends NotUrgentLetter<Integer>
 	{
 		if (this.getReceiver().getBankAccount().getAmount() >= this.getCost())
 			{
-				String thanksText = this.getReceiver().getName() + " mails a thanks letter whici is a simple letter whose content is a text content (thanks for a Promissory note letter whose content is a money content of " + this.content + ") to "
-				+ this.getReceiver().getName() + " for a cost of " + this.getCost() + " euro";
 
-				Letter<?> thankYouLetter = new SimpleLetter(this.getReceiver(), this.getSender(), thanksText);
+
+				Letter<?> thankYouLetter = new ThanksLetter(this.getReceiver(), this.getSender(), String.valueOf(this.getContent()));
 
 				this.getSender().getCity().getPostBox2().add(thankYouLetter);
 			}

@@ -67,7 +67,6 @@ public class City
 			if ((nbRadom % 2) == 0)
 				letter = new UrgentLetter(letter.getSender(), letter.getReceiver(), (NotUrgentLetter) letter);
 
-
 			this.postBox.add(letter);
 			i++;
 		}
