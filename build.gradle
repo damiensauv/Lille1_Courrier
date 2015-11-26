@@ -17,14 +17,6 @@ repositories {
     jcenter()
 }
 
-sourceSets {
-    test {
-        java {
-            srcDir 'src/tests/java'
-        }
-    }
-}
-
 task run(type:Exec, dependsOn:build) {
     commandLine 'java',  '-jar', './build/libs/Lille1_Courrier.jar'
     standardInput = System.in
