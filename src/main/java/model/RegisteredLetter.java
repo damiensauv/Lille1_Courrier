@@ -27,8 +27,6 @@ public class RegisteredLetter extends NotUrgentLetter<NotUrgentLetter>
 		System.out.println("-> " + this.getSender().getName() + " mails " + this.displayInside()
 				+  " to " + this.getReceiver().getName() + " for a cost of " + this.getCost() + " euros");
 
-		this.getSender().getBankAccount().debit(this.getCost());
-
 		System.out.println(" - " + this.getCost() + " euros are debited from " + this.getSender().getName() + " account whose balance is now "
 				+ this.getSender().getBankAccount().getAmount() + " euros");
 

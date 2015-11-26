@@ -1,16 +1,14 @@
 package model;
 
-import javax.sound.midi.Receiver;
 import java.util.*;
-import java.util.function.Consumer;
 
 /**
  * Created by svirchevsky on 26/11/15.
  */
 public class PostBox implements Iterable<Letter<?>> {
 
-    private List<Letter<?>> letters = new ArrayList<Letter<?>>();
-    private List<Letter<?>> nextDay = new ArrayList<Letter<?>>();
+    protected List<Letter<?>> currentDay = new ArrayList<Letter<?>>();
+    protected List<Letter<?>> nextDay = new ArrayList<Letter<?>>();
 
     /**
      * post a letter
@@ -32,13 +30,16 @@ public class PostBox implements Iterable<Letter<?>> {
      * Put the remaining letters posted today.
      */
     public void newDay() {
-        this.letters.clear();
-        this.letters.addAll(this.nextDay);
+        this.currentDay.addAll(this.nextDay);
         this.nextDay.clear();
     }
 
     @Override
     public Iterator<Letter<?>> iterator() {
-        return letters.iterator();
+        return currentDay.iterator();
+    }
+
+    public void posted(List<Letter<?>> l) {
+        this.currentDay.removeAll(l);
     }
 }

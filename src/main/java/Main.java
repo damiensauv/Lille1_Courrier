@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Creating " + city.getName() + " city");
 
         // Create inhabitant
-        city.generateInhabitant(inhabitant);
+        city.generateInhabitants(inhabitant);
 
         System.out.println("Creating " + inhabitant + " inhabitants");
         System.out.println("Mailing letters for " + nbDays + " days");
@@ -24,8 +24,8 @@ public class Main {
         while (i < nbDays) {
             System.out.println("***********************************************");
             System.out.println("Day " + String.valueOf(i + 1));
-            city.distributeLetters();
             city.sendLetters();
+            city.distributeLetters();
             i++;
         }
     }
